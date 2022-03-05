@@ -26,7 +26,7 @@ func main() {
 	}
 	log.Printf("Successfully connected to RabbitMQ server as consumer!")
 	for q, d := range deliveries {
-		go conn.HandleConsumedDeliveries(q, d, handler.ConsumerMessageHandler)
+		go conn.HandleConsumedDeliveries(q, d, handler.ConsumerMessage)
 	}
 	<-forever // keep alive
 }

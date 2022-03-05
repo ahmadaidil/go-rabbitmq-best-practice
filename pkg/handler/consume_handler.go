@@ -7,7 +7,7 @@ import (
 	"github.com/streadway/amqp"
 )
 
-func ConsumerMessageHandler(c rbmq.Connection, q string, deliveries <-chan amqp.Delivery) {
+func ConsumerMessage(c rbmq.Connection, q string, deliveries <-chan amqp.Delivery) {
 	for d := range deliveries {
 		m := rbmq.Message{
 			Queue:         q,
