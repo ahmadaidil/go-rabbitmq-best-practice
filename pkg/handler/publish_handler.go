@@ -26,7 +26,7 @@ func PublishUserMessage(rc *rbmq.Connection) fiber.Handler {
 		m := rbmq.Message{
 			Queue:       "user",
 			Body:        body,
-			ContentType: "text/json",
+			ContentType: "application/json",
 		}
 
 		if err := rc.Publish(m); err != nil {
